@@ -1,0 +1,44 @@
+.top-navbar {
+    background-color: #0f171e;
+    display: flex;
+    flex-direction: row;
+
+    .amazon-logo {
+        height: 70px;
+    }
+
+    .nav-bar-tab-section {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 4;
+        .nav-bar-tabs {
+            margin-top: 25px;
+            padding-left: 10px;
+            .nav-bar-link {
+                color: white;
+                font-size: 17px;
+                font-weight: 700;
+                text-decoration: none;
+                &.active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .search-textbox {
+        justify-content: right;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        flex-grow: 1;
+        .search-text-icon {
+            background: white;
+            border: 0px;
+            margin: 0px;
+        }
+        .search-text-form {
+            border: 0px;
+        }
+    }
+}
