@@ -1,0 +1,36 @@
+
+.primary-banner-area {
+    display: flex;
+    flex-direction: row;
+        .left-banner-icon-space, .right-banner-icon-space {
+        width: 10%;
+        background-color: #0f171e;
+        }
+
+        .left-banner-icon {
+            height: 40px;
+            float: left;
+            padding-left: 20px;
+            padding-top: 105px;
+        }
+        .primary-banner {
+            height: 300px;
+            width: 100%;
+        }
+        .right-banner-icon {
+            height: 40px;
+            float: right;
+            padding-right: 20px;
+            padding-top: 105px;
+        }
+}
+
+.continue-watching-area {
+    padding-top: 20px;
+    padding-top: 30px;
+    padding-left: 10px;
+    .continue-watching-text {
+        color: white;
+        font-weight: 700;
+    }
+}

@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, Navbar, Image, Container, Col, InputGroup, FormControl } from 'react-bootstrap';
 
+import Toptabs from '../toptabs';
 import './Topnav.scss'
 
 const Topnav = (props) => {
-    const makeActiveElement = (key) => {
-        console.log("KEYYY ", key)
+    const [keyName, setKeyName] = useState('')
+
+    const makeElementActive = (key) => {
         const element = document.getElementById(key);
-        console.log('ELEMENT ', element)
         element.classList.add("active");
-     }
-    const handleSelectLink = (key) => {
-           console.log('KEYYY!!! ', key)
-           makeActiveElement(key)
+        const prevElement = document.getElementById(keyName);
+        prevElement ? prevElement.classList.remove("active") : console.log('app launched');
+        setKeyName(key)
     }
+    const handleSelectLink = (key) => {
+        makeElementActive(key)
+    }
+
+    useEffect(() => {
+        makeElementActive('home')
+    }, [])
+
     return (
+        <>
         <Container fluid className=''>
             <Navbar className='top-navbar justify-content-between'>
                 <Image
@@ -25,34 +34,39 @@ const Topnav = (props) => {
 
                 <Nav onSelect={handleSelectLink} className='nav-bar-tab-section'>
                     <Nav.Item className='nav-bar-tabs'>
-                        <Nav.Link className='nav-bar-link' eventKey='home' id='home'>
+                        <Nav.Link className='nav-bar-tabs-link' eventKey='home' id='home'>
                             Home
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item className='nav-bar-tabs'>
-                        <Nav.Link className='nav-bar-link' eventKey='tvshow' id='tvshow'>
+                        <Nav.Link className='nav-bar-tabs-link' eventKey='tvshow' id='tvshow'>
                             TV Shows
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item className='nav-bar-tabs'>
-                        <Nav.Link className='nav-bar-link' eventKey='movies' id='movies'>
+                        <Nav.Link className='nav-bar-tabs-link' eventKey='movies' id='movies'>
                             Movies
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item className='nav-bar-tabs'>
-                        <Nav.Link className='nav-bar-link' eventKey='kids' id='kids'>
+                        <Nav.Link className='nav-bar-tabs-link' eventKey='kids' id='kids'>
                             Kids
                         </Nav.Link>
                     </Nav.Item>
                 </Nav>
 
-                <Col className='search-textbox'>
-                        {/* <InputGroup.Text className='search-text-icon'>@</InputGroup.Text> */}
-                        <img className='search-text-icon' src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>        
-                        <FormControl id="inlineFormInputGroup" className='search-text-form' placeholder="Username" />
+                <Col className='nav-search-textbox'>
+                    <img className='search-text-icon' src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" />
+                    <FormControl id="inlineFormInputGroup" className='search-text-form' placeholder="Username" />
                 </Col>
-            </Navbar>
+                <Col className='nav-user' onClick={props.handleOpenHeaderMenu}>
+                    <Image className='nav-user-icon' src='https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png' />
+                    <span className='nav-user-name'>{'Chin..'.toLowerCase()}</span>
+                </Col>
+                <Col className='caret-icon' onClick={props.handleOpenHeaderMenu}><i class="fa fa-caret-down"></i></Col>
+            </Navbar>    
         </Container>
+        </>
     );
 }
 
