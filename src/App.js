@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 
-import Topnav from './components/Tobnav';
-import LandingPage from './components/LandingPage';
-import Toptabs from './components/toptabs';
+import Home from './components/Home';
+import SignIn from './components/SignIn';
+
 import './App.css';
 
 function App() {
-  const [openHeaderMenu, setOpenHeaderMenu] = useState(false)
-
-  const handleOpenHeaderMenu = () => {
-    setOpenHeaderMenu(!openHeaderMenu)
-  }
-  return (
+  const [ isUserLogin , setIsUserLogin ] = useState(false)
+  return isUserLogin ? 
+   (
     <div className="App">
-        <Topnav handleOpenHeaderMenu={handleOpenHeaderMenu}/>
-        <LandingPage openHeaderMenu={openHeaderMenu}/>
+        <Home/>
     </div>
-  );
+   )
+    :
+  (
+    <SignIn/>
+  )
+
 }
 
 export default App;

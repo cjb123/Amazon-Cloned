@@ -4,7 +4,7 @@ import { Col, Image } from 'react-bootstrap'
 import './Toptabs.scss';
 
 function Toptabs(props) {
-    if (props.openHeaderMenu) {
+    if(props.openHeaderMenu) {
         return (
             <Col className='navbar-option-menu'>
                 <Col className='navbar-option-menu-content'>
@@ -55,7 +55,6 @@ function Toptabs(props) {
         )
     }
     return ''
-
 }
 
 export default Toptabs;
