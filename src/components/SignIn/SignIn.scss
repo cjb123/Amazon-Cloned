@@ -36,145 +36,151 @@
         border-radius: 4px;
         .sign-in-card-contents {
             padding: 0px 10px 0px 10px;
-        .sign-in-card-header-text {
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 1.2;
-            padding: 10px 0px 0px 10px;
-        }
-
-        .sign-in-card-input-fields {
-            display: flex;
-            flex-direction: column;
-            .sign-in-email-input-label {
-                padding: 20px 0px 5px 10px;
-                font-size: 13px;
-                line-height: 19px;
-                font-weight: 700;
-                color: #111;
-            }
-            .sign-in-email-input {
-                margin: 0px 10px 0px 10px;
-                padding: 5px 0px 5px 0px;
+            .sign-in-card-header-text {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 1.2;
+                padding: 10px 0px 0px 10px;
             }
 
-            .password-label {
+            .sign-in-card-input-fields {
                 display: flex;
-                flex-direction: row;
-
-                .sign-in-forgot-password {
-                    font-size: 12px;
-                    line-height: 19px;
-                    text-align: right;
-                    padding-top: 10px;
-                    padding-right: 10px;
-                    color: #0066c0;
-                }
-                .sign-in-password-input-label {
-                    flex-grow: 2;
-                    padding: 10px 0px 5px 10px;
+                flex-direction: column;
+                .sign-in-email-input-label {
+                    padding: 20px 0px 5px 10px;
                     font-size: 13px;
                     line-height: 19px;
                     font-weight: 700;
                     color: #111;
                 }
-            }
-            .sign-in-password-input {
-                margin: 0px 10px 0px 10px;
-                padding: 5px 0px 5px 0px;
-            }
-        }
+                .email-alert, .password-alert {
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #c40000;
+                    padding: 10px;
+                }
+                .sign-in-email-input {
+                    margin: 0px 10px 0px 10px;
+                    padding: 5px 0px 5px 0px;
+                }
 
-        .sign-in-button-wrap {
-            display: flex;
-            justify-content: center;
-            padding-top: 30px;
-            .sign-in-button {
-                border-radius: 4px;
-                padding: 8px 0px 8px 0px;
-                border: 1px;
-                width: 95%;
-                background: linear-gradient(to bottom, #f7dfa5, #f0c14b) !important;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset !important;
-            }
-        }
+                .password-label {
+                    display: flex;
+                    flex-direction: row;
 
-        .sign-in-card-conditional-statement {
-            font-size: 12px;
-            padding: 10px;
-        }
+                    .sign-in-forgot-password {
+                        font-size: 12px;
+                        line-height: 19px;
+                        text-align: right;
+                        padding-top: 10px;
+                        padding-right: 10px;
+                        color: #0066c0;
+                    }
+                    .sign-in-password-input-label {
+                        flex-grow: 2;
+                        padding: 10px 0px 5px 10px;
+                        font-size: 13px;
+                        line-height: 19px;
+                        font-weight: 700;
+                        color: #111;
+                    }
+                }
+                .sign-in-password-input {
+                    margin: 0px 10px 0px 10px;
+                    padding: 5px 0px 5px 0px;
+                }
+            }
 
-        .keep-me-signed-in {
-            display: flex;
-            margin: 10px;
-            font-size: 13px;
-            line-height: 19px;
-            font-weight: 400;
-            .keep-me-signed-in-checkbox {
+            .sign-in-button-wrap {
+                display: flex;
+                justify-content: center;
+                padding-top: 30px;
+                .sign-in-button {
+                    border-radius: 4px;
+                    padding: 8px 0px 8px 0px;
+                    border: 1px;
+                    width: 95%;
+                    background: linear-gradient(to bottom, #f7dfa5, #f0c14b) !important;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset !important;
+                }
             }
-            .keep-me-signed-in-text {
-                padding-left: 4px;
+
+            .sign-in-card-conditional-statement {
+                font-size: 12px;
+                padding: 10px;
             }
-            .keep-me-signed-in-details {
-                color: #0066c0;
-                padding-left: 5px;
-                .keep-me-signed-in-caret {
-                    color: black;
+
+            .keep-me-signed-in {
+                display: flex;
+                margin: 10px;
+                font-size: 13px;
+                line-height: 19px;
+                font-weight: 400;
+                .keep-me-signed-in-checkbox {
+                }
+                .keep-me-signed-in-text {
+                    padding-left: 4px;
+                }
+                .keep-me-signed-in-details {
+                    color: #0066c0;
+                    padding-left: 5px;
+                    .keep-me-signed-in-caret {
+                        color: black;
+                    }
+                }
+            }
+
+            .new-to-amazon-divider-break {
+                text-align: center;
+                position: relative;
+                top: 5px;
+                padding-top: 0px;
+                margin-bottom: 14px;
+                line-height: 0;
+                margin-left: 10px;
+                margin-right: 10px;
+                .new-to-amazon-divider-text {
+                    line-height: 1;
+                    font-size: 12px;
+                    color: #767676;
+                    font-weight: 400;
+                    z-index: 2;
+                    position: relative;
+                    display: inline-block;
+                    background-color: #fff;
+                    padding: 0 8px 0 7px;
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    background-color: transparent;
+                    display: block;
+                    height: 1px;
+                    border-top: 1px solid #e7e7e7;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1px;
+                    z-index: 1;
+                }
+            }
+
+            .sign-in-create-account {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px;
+                .sign-in-create-account-button {
+                    border-radius: 4px;
+                    padding: 8px 0px 8px 0px;
+                    border: 1px;
+                    width: 95%;
+                    background: linear-gradient(to bottom, #f7f8fa, #e7e9ec) !important;
+                    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset !important;
+                    // border-radius: 3px;
+                    border-color: #adb1b8 #a2a6ac #8d9096;
+                    border-style: solid;
+                    border-width: 1px;
                 }
             }
         }
-
-        .new-to-amazon-divider-break {
-            text-align: center;
-            position: relative;
-            top: 5px;
-            padding-top: 0px;
-            margin-bottom: 14px;
-            line-height: 0;
-            margin-left: 10px;
-            margin-right: 10px;
-            .new-to-amazon-divider-text {
-                line-height: 1;
-                font-size: 12px;
-                color: #767676;
-                font-weight: 400;
-                z-index: 2;
-                position: relative;
-                display: inline-block;
-                background-color: #fff;
-                padding: 0 8px 0 7px;
-            }
-            &::after {
-                content: "";
-                width: 100%;
-                background-color: transparent;
-                display: block;
-                height: 1px;
-                border-top: 1px solid #e7e7e7;
-                position: absolute;
-                top: 50%;
-                margin-top: -1px;
-                z-index: 1;
-            }
-        }
-
-        .sign-in-create-account {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 20px;
-            .sign-in-create-account-button {
-                border-radius: 4px;
-                padding: 8px 0px 8px 0px;
-                border: 1px;
-                width: 95%;
-                background: linear-gradient(to bottom,#f7f8fa,#e7e9ec) !important;
-                box-shadow: 0 1px 0 rgba(255,255,255,.6) inset !important;
-                // border-radius: 3px;
-    border-color: #adb1b8 #a2a6ac #8d9096;
-    border-style: solid;
-    border-width: 1px;
-            }
-        }
     }
-}
 }

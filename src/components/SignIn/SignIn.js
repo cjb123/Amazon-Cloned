@@ -1,11 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Image, Navbar, Form, Button } from 'react-bootstrap'
+import { Route , useHistory } from 'react-router-dom';
+
+import {getLoginPath} from '../../utils/paths'
 
 import Topnav from '../Tobnav';
 import './SignIn.scss';
 
 const SignIn = () => {
+    const history = useHistory()
+
     const [signInClicked, setSignInClicked] = useState(false)
+    const [schoolName, setSchoolName] = useState('')
+    const [password, setPassword] = useState('')
+    const [emailError, setEmailError] = useState(false)
+    const [passwordError, setPasswordError] = useState(false)
+    
+    const handleSignIn = () => {
+        if (schoolName.length > 0 && password.length > 0) {
+            
+
+        } if(schoolName.length === 0) {
+            setEmailError(true)
+        }
+       
+        if(password.length === 0) {
+            setPasswordError(true)
+        }
+    }
+
+    const handleSchoolName = e => setSchoolName(e.target.value)
+
+    const handlePassword = (e) => {
+        
+        setPassword(e.target.value)
+        e.persist()
+        e.preventDefault()
+    }
 
     const SignInHomeView = () => (
         <Container fluid className=''>
@@ -44,9 +75,15 @@ const SignIn = () => {
                             className='sign-in-email-input border-0 p-2'
                             type='text'
                             placeholder=''
-                        // value={props?.schoolName || ''}
-                        // onChange={props.handleSchoolName}
+                            value={schoolName}
+                            onChange={handleSchoolName}
                         />
+                        {emailError ? 
+                        <Col className='email-alert'>
+                             Enter your email or mobile phone number
+                        </Col>
+                        :''}
+
                         <Col className='password-label'>
                             <Form.Label className='sign-in-password-input-label'>Password</Form.Label>
                             <Form.Label className='sign-in-forgot-password'>Forgot your password?</Form.Label>
@@ -55,13 +92,17 @@ const SignIn = () => {
                             className='sign-in-password-input border-0 p-2'
                             type='text'
                             placeholder=''
-                        // value={props?.schoolName || ''}
-                        // onChange={props.handleSchoolName}
+                            value={password || ''}
+                            onChange={handlePassword}
                         />
+                        {passwordError ? <Col className='password-alert'>
+                        Enter your password
+                        </Col>
+                        :''}
                     </Col>
 
                     <Col className='sign-in-button-wrap'>
-                        <Button className='sign-in-button'>
+                        <Button onClick={handleSignIn} className='sign-in-button'>
                             Sign-In
                         </Button>
                     </Col>
@@ -95,7 +136,8 @@ const SignIn = () => {
             </Card>
         </Container>
     )
-    return signInClicked ? <SignInView /> : <SignInHomeView />
+
+    return signInClicked ? <SignInView/> : <SignInHomeView />
 }
 
 export default SignIn;

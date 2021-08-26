@@ -1,1 +1,2 @@
-export const getLoginPath = (path = 'login') => `/${path}`
+export const getLandingPath = (path = '') => `/${path}`
+export const getLoginPath = () => getLandingPath('login')
